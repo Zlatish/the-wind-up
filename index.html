@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>The Wind Up</title>
+<meta name="description" content="Watch news, markets and one watch worth knowing">
+<link rel="icon" href="https://zlatish.github.io/the-wind-up/assets/crown.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root { --bg: #F6F1E7; --ink: #2B1E16; --meta: #6B5A4A; --label: #7A5A1E; --rule: #D9C9A8; --brass: #C9A86A; --link: #7A5A1E; --inset: #EDE4D3; --card: #2B1E16; --cardInk: #F6F1E7; --cardMeta: #BFAE98; --cardBand: #3A2A20; --up: #2F6B3A; --down: #9A3B2B; --crown: #8A6A2E;
+    --serif: 'Bodoni Moda', Didot, 'Bodoni 72', Georgia, serif;
+    --sans: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --mono: 'IBM Plex Mono', Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #1A1410; --ink: #EFE7DA; --meta: #B5A691; --label: #D2B57A; --rule: #3E3126; --brass: #C9A86A; --link: #D2B57A; --inset: #EDE4D3; --card: #0E0A07; --cardInk: #EFE7DA; --cardMeta: #B5A691; --cardBand: #241B14; --up: #7FC48D; --down: #E8907E; --crown: #C9A86A; }
+  }
+  :root[data-theme="dark"] { --bg: #1A1410; --ink: #EFE7DA; --meta: #B5A691; --label: #D2B57A; --rule: #3E3126; --brass: #C9A86A; --link: #D2B57A; --inset: #EDE4D3; --card: #0E0A07; --cardInk: #EFE7DA; --cardMeta: #B5A691; --cardBand: #241B14; --up: #7FC48D; --down: #E8907E; --crown: #C9A86A; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--sans); }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:hover { color: var(--ink); }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 32px 20px 64px; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  .mast { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+  .mast-label { font: 11px var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--meta); }
+  .mast-word { margin: 0; display: flex; align-items: center; gap: 6px; font: 400 clamp(38px, 10vw, 56px)/1 var(--serif); letter-spacing: -.01em; color: inherit; }
+  .mast-word a { color: inherit; text-decoration: none; }
+  .mast-tag { font: italic 15px var(--serif); color: var(--meta); }
+  .mast-track { position: relative; width: 100%; height: 32px; margin-top: 8px; }
+  .track { position: absolute; left: 0; top: 8px; height: 16px; width: 100%; overflow: hidden; }
+  .track svg { width: 100%; height: 16px; display: block; }
+  .window { position: absolute; left: 50%; top: 0; transform: translateX(-50%); background: var(--bg); border: 1px solid var(--crown); padding: 6px 10px; font: 12px var(--mono); letter-spacing: .08em; white-space: nowrap; }
+  @keyframes turn { from { transform: translateY(0); } to { transform: translateY(-6px); } }
+  @keyframes wipe { from { width: 0; } to { width: 100%; } }
+  @keyframes fade { from { opacity: 0; transform: translate(-50%, 4px); } to { opacity: 1; transform: translate(-50%, 0); } }
+  .animate .knurl { animation: turn .9s cubic-bezier(.3,.7,.3,1) .2s both; }
+  .animate .track { animation: wipe 1.1s ease-out .5s both; }
+  .animate .window { animation: fade .5s ease-out 1.4s both; }
+  @media (prefers-reduced-motion: reduce) { .knurl, .track, .window { animation: none !important; } }
+
+  .label { font: 12px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--label); }
+  .meta { color: var(--meta); }
+  .mono { font-family: var(--mono); }
+  .intro { margin: 32px 0 0; text-align: center; color: var(--meta); }
+  ol.issues { list-style: none; margin: 32px 0 0; padding: 0; border-top: 1px solid var(--brass); }
+  ol.issues li { border-bottom: 1px solid var(--rule); }
+  ol.issues a { display: block; padding: 16px 0; color: inherit; text-decoration: none; }
+  ol.issues a:hover .subject { text-decoration: underline; }
+  .row { display: flex; justify-content: space-between; gap: 12px; font: 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--label); }
+  .row span:last-child { color: var(--meta); letter-spacing: .04em; text-transform: none; }
+  .subject { margin-top: 6px; font: 500 20px/1.25 var(--serif); }
+  .pre { margin-top: 4px; font-size: 14px; color: var(--meta); }
+  .empty { margin-top: 32px; text-align: center; color: var(--meta); }
+  footer { margin-top: 48px; text-align: center; font-size: 13px; color: var(--meta); }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="mast animate">
+  <div class="mast-label">Past issues</div>
+  <h1 class="mast-word"><span>The Wind Up</span>
+    <svg class="crown" width="22" height="28" viewBox="0 0 22 28" fill="none" aria-hidden="true"><defs><clipPath id="crownclip"><rect x="6.75" y="4.75" width="13.5" height="18.5" rx="2"/></clipPath></defs><rect x="0" y="12" width="6" height="4" fill="var(--brass)"/><g clip-path="url(#crownclip)"><g class="knurl"><path d="M8 5h11M8 8h11M8 11h11M8 14h11M8 17h11M8 20h11M8 23h11M8 26h11M8 29h11" stroke="var(--crown)" stroke-width="1"/></g></g><rect x="6" y="4" width="15" height="20" rx="2.5" stroke="var(--crown)" stroke-width="1.5"/></svg>
+  </h1>
+  <div class="mast-tag">Watch news, markets and one watch worth knowing</div>
+  <div class="mast-track">
+    <div class="track"><svg viewBox="0 0 335 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0.5 0V16M6.1 8V16M11.6 8V16M17.2 8V16M22.8 8V16M28.3 0V16M33.9 8V16M39.5 8V16M45.0 8V16M50.6 8V16M56.2 0V16M61.7 8V16M67.3 8V16M72.9 8V16M78.4 8V16M84.0 0V16M89.6 8V16M95.1 8V16M100.7 8V16M106.3 8V16M111.8 0V16M117.4 8V16M123.0 8V16M128.5 8V16M134.1 8V16M139.7 0V16M145.2 8V16M150.8 8V16M156.4 8V16M161.9 8V16M167.5 0V16M173.1 8V16M178.6 8V16M184.2 8V16M189.8 8V16M195.3 0V16M200.9 8V16M206.5 8V16M212.0 8V16M217.6 8V16M223.2 0V16M228.7 8V16M234.3 8V16M239.9 8V16M245.4 8V16M251.0 0V16M256.6 8V16M262.1 8V16M267.7 8V16M273.3 8V16M278.8 0V16M284.4 8V16M290.0 8V16M295.5 8V16M301.1 8V16M306.7 0V16M312.2 8V16M317.8 8V16M323.4 8V16M328.9 8V16M334.5 0V16" stroke="var(--brass)" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></div><div class="window">No. 0 · LATEST</div>  </div>
+</header>
+  <p class="intro">Sunday roundups, Tuesday and Thursday briefs, every one since No. 1.</p>  <ol class="issues">    <li><a href="https://zlatish.github.io/the-wind-up/watches/2026-10-28-000.html">
+      <div class="row"><span>No. 0 · Sunday roundup · preview</span><span>Wednesday 28 October 2026</span></div>
+      <div class="subject">Preview: AP goes certified pre-owned, Zenith resets, and the Tissot PRX</div><div class="pre">A full Sunday-format issue built from this week&#39;s real news, so you can see how The Wind Up will look.</div>    </a></li>  </ol>  <footer>The Wind Up · Sunday, Tuesday and Thursday at 8am</footer>
+</main>
+</body>
+</html>
