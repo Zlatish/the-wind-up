@@ -12,15 +12,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-  :root { --bg: #F6F1E7; --ink: #2B1E16; --meta: #6B5A4A; --label: #7A5A1E; --rule: #D9C9A8; --brass: #C9A86A; --link: #7A5A1E; --inset: #EDE4D3; --card: #2B1E16; --cardInk: #F6F1E7; --cardMeta: #BFAE98; --cardBand: #3A2A20; --up: #2F6B3A; --down: #9A3B2B; --crown: #8A6A2E;
+  :root { --bg: #F6F1E7; --ink: #2B1E16; --meta: #6B5A4A; --label: #7A5A1E; --rule: #D9C9A8; --brass: #C9A86A; --link: #7A5A1E; --inset: #EDE4D3; --card: #2B1E16; --cardInk: #F6F1E7; --cardMeta: #BFAE98; --cardBand: #3A2A20; --up: #2F6B3A; --down: #9A3B2B; --aside: #EDE4D3; --crown: #8A6A2E;
     --serif: 'Bodoni Moda', Didot, 'Bodoni 72', Georgia, serif;
     --sans: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --mono: 'IBM Plex Mono', Menlo, Consolas, monospace;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --bg: #1A1410; --ink: #EFE7DA; --meta: #B5A691; --label: #D2B57A; --rule: #3E3126; --brass: #C9A86A; --link: #D2B57A; --inset: #EDE4D3; --card: #0E0A07; --cardInk: #EFE7DA; --cardMeta: #B5A691; --cardBand: #241B14; --up: #7FC48D; --down: #E8907E; --crown: #C9A86A; }
+    :root:not([data-theme="light"]) { --bg: #1A1410; --ink: #EFE7DA; --meta: #B5A691; --label: #D2B57A; --rule: #3E3126; --brass: #C9A86A; --link: #D2B57A; --inset: #EDE4D3; --card: #0E0A07; --cardInk: #EFE7DA; --cardMeta: #B5A691; --cardBand: #241B14; --up: #7FC48D; --down: #E8907E; --aside: #241B14; --crown: #C9A86A; }
   }
-  :root[data-theme="dark"] { --bg: #1A1410; --ink: #EFE7DA; --meta: #B5A691; --label: #D2B57A; --rule: #3E3126; --brass: #C9A86A; --link: #D2B57A; --inset: #EDE4D3; --card: #0E0A07; --cardInk: #EFE7DA; --cardMeta: #B5A691; --cardBand: #241B14; --up: #7FC48D; --down: #E8907E; --crown: #C9A86A; }
+  :root[data-theme="dark"] { --bg: #1A1410; --ink: #EFE7DA; --meta: #B5A691; --label: #D2B57A; --rule: #3E3126; --brass: #C9A86A; --link: #D2B57A; --inset: #EDE4D3; --card: #0E0A07; --cardInk: #EFE7DA; --cardMeta: #B5A691; --cardBand: #241B14; --up: #7FC48D; --down: #E8907E; --aside: #241B14; --crown: #C9A86A; }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--sans); }
@@ -71,9 +71,11 @@
   </h1>
   <div class="mast-tag">Watch news, markets and one watch worth knowing</div>
   <div class="mast-track">
-    <div class="track"><svg viewBox="0 0 335 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0.5 0V16M6.1 8V16M11.6 8V16M17.2 8V16M22.8 8V16M28.3 0V16M33.9 8V16M39.5 8V16M45.0 8V16M50.6 8V16M56.2 0V16M61.7 8V16M67.3 8V16M72.9 8V16M78.4 8V16M84.0 0V16M89.6 8V16M95.1 8V16M100.7 8V16M106.3 8V16M111.8 0V16M117.4 8V16M123.0 8V16M128.5 8V16M134.1 8V16M139.7 0V16M145.2 8V16M150.8 8V16M156.4 8V16M161.9 8V16M167.5 0V16M173.1 8V16M178.6 8V16M184.2 8V16M189.8 8V16M195.3 0V16M200.9 8V16M206.5 8V16M212.0 8V16M217.6 8V16M223.2 0V16M228.7 8V16M234.3 8V16M239.9 8V16M245.4 8V16M251.0 0V16M256.6 8V16M262.1 8V16M267.7 8V16M273.3 8V16M278.8 0V16M284.4 8V16M290.0 8V16M295.5 8V16M301.1 8V16M306.7 0V16M312.2 8V16M317.8 8V16M323.4 8V16M328.9 8V16M334.5 0V16" stroke="var(--brass)" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></div><div class="window">No. 3 · LATEST</div>  </div>
+    <div class="track"><svg viewBox="0 0 335 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0.5 0V16M6.1 8V16M11.6 8V16M17.2 8V16M22.8 8V16M28.3 0V16M33.9 8V16M39.5 8V16M45.0 8V16M50.6 8V16M56.2 0V16M61.7 8V16M67.3 8V16M72.9 8V16M78.4 8V16M84.0 0V16M89.6 8V16M95.1 8V16M100.7 8V16M106.3 8V16M111.8 0V16M117.4 8V16M123.0 8V16M128.5 8V16M134.1 8V16M139.7 0V16M145.2 8V16M150.8 8V16M156.4 8V16M161.9 8V16M167.5 0V16M173.1 8V16M178.6 8V16M184.2 8V16M189.8 8V16M195.3 0V16M200.9 8V16M206.5 8V16M212.0 8V16M217.6 8V16M223.2 0V16M228.7 8V16M234.3 8V16M239.9 8V16M245.4 8V16M251.0 0V16M256.6 8V16M262.1 8V16M267.7 8V16M273.3 8V16M278.8 0V16M284.4 8V16M290.0 8V16M295.5 8V16M301.1 8V16M306.7 0V16M312.2 8V16M317.8 8V16M323.4 8V16M328.9 8V16M334.5 0V16" stroke="var(--brass)" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></div><div class="window">No. 4 · LATEST</div>  </div>
 </header>
-  <p class="intro">Sunday roundups, Tuesday and Thursday briefs, every one since No. 1.</p>  <ol class="issues">    <li><a href="https://zlatish.github.io/the-wind-up/watches/2026-11-03-003.html">
+  <p class="intro">Sunday roundups, Tuesday and Thursday briefs, every one since No. 1.</p>  <ol class="issues">    <li><a href="https://zlatish.github.io/the-wind-up/watches/2026-11-05-004.html">
+      <div class="row"><span>No. 4 · Brief</span><span>Thursday 5 November 2026</span></div>
+      <div class="subject">Brief: Omega quietly discontinues the Speedmaster X-33</div><div class="pre">The X-33 bows out, Piaget&#39;s second Warhol, an oxblood Oris and a £499 Moon-landing chronograph.</div>    </a></li>    <li><a href="https://zlatish.github.io/the-wind-up/watches/2026-11-03-003.html">
       <div class="row"><span>No. 3 · Brief</span><span>Tuesday 3 November 2026</span></div>
       <div class="subject">Brief: Audemars Piguet adds five high-end Royal Oak and Code 11.59s</div><div class="pre">AP&#39;s new chiming watches, Moser&#39;s Heritage returns, a £20bn secondary market and a white gold Nautilus.</div>    </a></li>    <li><a href="https://zlatish.github.io/the-wind-up/watches/2026-11-01-002.html">
       <div class="row"><span>No. 2 · Sunday roundup</span><span>Sunday 1 November 2026</span></div>
